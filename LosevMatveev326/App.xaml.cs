@@ -17,6 +17,5 @@ namespace LosevMatveev326
     {
         public static LosevMatveev326Entities DB = new LosevMatveev326Entities();
         public static Employee LoggedEmployee;
-        Animal animal;
     }
 }
