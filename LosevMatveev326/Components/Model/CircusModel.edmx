@@ -1,0 +1,821 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="Хранилище LosevMatveev326Model" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Age" Type="int" />
+          <Property Name="TypeAnimalId" Type="int" />
+          <Property Name="CageId" Type="int" />
+        </EntityType>
+        <EntityType Name="Cage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Square" Type="decimal" Precision="18" Scale="1" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="PostId" Type="int" Nullable="false" />
+          <Property Name="Birthday" Type="date" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Image" Type="varchar(max)" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="TypeItemId" Type="int" />
+          <Property Name="Image" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="ItemEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="ItemId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Performance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateTime" Type="datetime" />
+          <Property Name="TicketPrice" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="TicketAmount" Type="int" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SchedulePerfomance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PerformanceId" Type="int" />
+          <Property Name="Time" Type="time" Precision="7" />
+          <Property Name="EmployeeId" Type="int" />
+          <Property Name="AnimalId" Type="int" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TicketSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PerformanceId" Type="int" />
+          <Property Name="ClientId" Type="int" />
+        </EntityType>
+        <EntityType Name="TypeAnimal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TypeItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Animal_Cage">
+          <End Role="Cage" Type="Self.Cage" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="CageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_TypeAnimal">
+          <End Role="TypeAnimal" Type="Self.TypeAnimal" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeAnimal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="TypeAnimalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Post">
+          <End Role="Post" Type="Self.Post" Multiplicity="1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_TypeItem">
+          <End Role="TypeItem" Type="Self.TypeItem" Multiplicity="0..1" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="TypeItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemEmployee_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
+          <End Role="ItemEmployee" Type="Self.ItemEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemEmployee">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemEmployee_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="ItemEmployee" Type="Self.ItemEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemEmployee">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchedulePerfomance_Animal">
+          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="SchedulePerfomance" Type="Self.SchedulePerfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SchedulePerfomance">
+              <PropertyRef Name="AnimalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchedulePerfomance_Employee">
+          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="SchedulePerfomance" Type="Self.SchedulePerfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SchedulePerfomance">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchedulePerfomance_Performance">
+          <End Role="Performance" Type="Self.Performance" Multiplicity="0..1" />
+          <End Role="SchedulePerfomance" Type="Self.SchedulePerfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Performance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SchedulePerfomance">
+              <PropertyRef Name="PerformanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketSale_Client">
+          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TicketSale">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketSale_Performance">
+          <End Role="Performance" Type="Self.Performance" Multiplicity="0..1" />
+          <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Performance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TicketSale">
+              <PropertyRef Name="PerformanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="Хранилище LosevMatveev326ModelContainer">
+          <EntitySet Name="Animal" EntityType="Self.Animal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cage" EntityType="Self.Cage" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Client" EntityType="Self.Client" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Employee" EntityType="Self.Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ItemEmployee" EntityType="Self.ItemEmployee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Performance" EntityType="Self.Performance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Post" EntityType="Self.Post" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SchedulePerfomance" EntityType="Self.SchedulePerfomance" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TicketSale" EntityType="Self.TicketSale" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeAnimal" EntityType="Self.TypeAnimal" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TypeItem" EntityType="Self.TypeItem" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Animal_Cage" Association="Self.FK_Animal_Cage">
+            <End Role="Cage" EntitySet="Cage" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_TypeAnimal" Association="Self.FK_Animal_TypeAnimal">
+            <End Role="TypeAnimal" EntitySet="TypeAnimal" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Post" Association="Self.FK_Employee_Post">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_TypeItem" Association="Self.FK_Item_TypeItem">
+            <End Role="TypeItem" EntitySet="TypeItem" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemEmployee_Employee" Association="Self.FK_ItemEmployee_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ItemEmployee" EntitySet="ItemEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemEmployee_Item" Association="Self.FK_ItemEmployee_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="ItemEmployee" EntitySet="ItemEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchedulePerfomance_Animal" Association="Self.FK_SchedulePerfomance_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="SchedulePerfomance" EntitySet="SchedulePerfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchedulePerfomance_Employee" Association="Self.FK_SchedulePerfomance_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="SchedulePerfomance" EntitySet="SchedulePerfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchedulePerfomance_Performance" Association="Self.FK_SchedulePerfomance_Performance">
+            <End Role="Performance" EntitySet="Performance" />
+            <End Role="SchedulePerfomance" EntitySet="SchedulePerfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketSale_Client" Association="Self.FK_TicketSale_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="TicketSale" EntitySet="TicketSale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketSale_Performance" Association="Self.FK_TicketSale_Performance">
+            <End Role="Performance" EntitySet="Performance" />
+            <End Role="TicketSale" EntitySet="TicketSale" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LosevMatveev326Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LosevMatveev326Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Animal" EntityType="LosevMatveev326Model.Animal" />
+          <EntitySet Name="Cage" EntityType="LosevMatveev326Model.Cage" />
+          <EntitySet Name="Client" EntityType="LosevMatveev326Model.Client" />
+          <EntitySet Name="Employee" EntityType="LosevMatveev326Model.Employee" />
+          <EntitySet Name="Item" EntityType="LosevMatveev326Model.Item" />
+          <EntitySet Name="ItemEmployee" EntityType="LosevMatveev326Model.ItemEmployee" />
+          <EntitySet Name="Performance" EntityType="LosevMatveev326Model.Performance" />
+          <EntitySet Name="Post" EntityType="LosevMatveev326Model.Post" />
+          <EntitySet Name="SchedulePerfomance" EntityType="LosevMatveev326Model.SchedulePerfomance" />
+          <EntitySet Name="sysdiagrams" EntityType="LosevMatveev326Model.sysdiagrams" />
+          <EntitySet Name="TicketSale" EntityType="LosevMatveev326Model.TicketSale" />
+          <EntitySet Name="TypeAnimal" EntityType="LosevMatveev326Model.TypeAnimal" />
+          <EntitySet Name="TypeItem" EntityType="LosevMatveev326Model.TypeItem" />
+          <AssociationSet Name="FK_Animal_Cage" Association="LosevMatveev326Model.FK_Animal_Cage">
+            <End Role="Cage" EntitySet="Cage" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Animal_TypeAnimal" Association="LosevMatveev326Model.FK_Animal_TypeAnimal">
+            <End Role="TypeAnimal" EntitySet="TypeAnimal" />
+            <End Role="Animal" EntitySet="Animal" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchedulePerfomance_Animal" Association="LosevMatveev326Model.FK_SchedulePerfomance_Animal">
+            <End Role="Animal" EntitySet="Animal" />
+            <End Role="SchedulePerfomance" EntitySet="SchedulePerfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketSale_Client" Association="LosevMatveev326Model.FK_TicketSale_Client">
+            <End Role="Client" EntitySet="Client" />
+            <End Role="TicketSale" EntitySet="TicketSale" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Employee_Post" Association="LosevMatveev326Model.FK_Employee_Post">
+            <End Role="Post" EntitySet="Post" />
+            <End Role="Employee" EntitySet="Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemEmployee_Employee" Association="LosevMatveev326Model.FK_ItemEmployee_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="ItemEmployee" EntitySet="ItemEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchedulePerfomance_Employee" Association="LosevMatveev326Model.FK_SchedulePerfomance_Employee">
+            <End Role="Employee" EntitySet="Employee" />
+            <End Role="SchedulePerfomance" EntitySet="SchedulePerfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Item_TypeItem" Association="LosevMatveev326Model.FK_Item_TypeItem">
+            <End Role="TypeItem" EntitySet="TypeItem" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ItemEmployee_Item" Association="LosevMatveev326Model.FK_ItemEmployee_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="ItemEmployee" EntitySet="ItemEmployee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SchedulePerfomance_Performance" Association="LosevMatveev326Model.FK_SchedulePerfomance_Performance">
+            <End Role="Performance" EntitySet="Performance" />
+            <End Role="SchedulePerfomance" EntitySet="SchedulePerfomance" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TicketSale_Performance" Association="LosevMatveev326Model.FK_TicketSale_Performance">
+            <End Role="Performance" EntitySet="Performance" />
+            <End Role="TicketSale" EntitySet="TicketSale" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Animal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" />
+          <Property Name="TypeAnimalId" Type="Int32" />
+          <Property Name="CageId" Type="Int32" />
+          <NavigationProperty Name="Cage" Relationship="LosevMatveev326Model.FK_Animal_Cage" FromRole="Animal" ToRole="Cage" />
+          <NavigationProperty Name="TypeAnimal" Relationship="LosevMatveev326Model.FK_Animal_TypeAnimal" FromRole="Animal" ToRole="TypeAnimal" />
+          <NavigationProperty Name="SchedulePerfomance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Animal" FromRole="Animal" ToRole="SchedulePerfomance" />
+        </EntityType>
+        <EntityType Name="Cage">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Square" Type="Decimal" Precision="18" Scale="1" />
+          <NavigationProperty Name="Animal" Relationship="LosevMatveev326Model.FK_Animal_Cage" FromRole="Cage" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="Client">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TicketSale" Relationship="LosevMatveev326Model.FK_TicketSale_Client" FromRole="Client" ToRole="TicketSale" />
+        </EntityType>
+        <EntityType Name="Employee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PostId" Type="Int32" Nullable="false" />
+          <Property Name="Birthday" Type="DateTime" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Post" Relationship="LosevMatveev326Model.FK_Employee_Post" FromRole="Employee" ToRole="Post" />
+          <NavigationProperty Name="ItemEmployee" Relationship="LosevMatveev326Model.FK_ItemEmployee_Employee" FromRole="Employee" ToRole="ItemEmployee" />
+          <NavigationProperty Name="SchedulePerfomance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Employee" FromRole="Employee" ToRole="SchedulePerfomance" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeItemId" Type="Int32" />
+          <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TypeItem" Relationship="LosevMatveev326Model.FK_Item_TypeItem" FromRole="Item" ToRole="TypeItem" />
+          <NavigationProperty Name="ItemEmployee" Relationship="LosevMatveev326Model.FK_ItemEmployee_Item" FromRole="Item" ToRole="ItemEmployee" />
+        </EntityType>
+        <EntityType Name="ItemEmployee">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="ItemId" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Employee" Relationship="LosevMatveev326Model.FK_ItemEmployee_Employee" FromRole="ItemEmployee" ToRole="Employee" />
+          <NavigationProperty Name="Item" Relationship="LosevMatveev326Model.FK_ItemEmployee_Item" FromRole="ItemEmployee" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Performance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateTime" Type="DateTime" Precision="3" />
+          <Property Name="TicketPrice" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="TicketAmount" Type="Int32" />
+          <NavigationProperty Name="SchedulePerfomance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Performance" FromRole="Performance" ToRole="SchedulePerfomance" />
+          <NavigationProperty Name="TicketSale" Relationship="LosevMatveev326Model.FK_TicketSale_Performance" FromRole="Performance" ToRole="TicketSale" />
+        </EntityType>
+        <EntityType Name="Post">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Employee" Relationship="LosevMatveev326Model.FK_Employee_Post" FromRole="Post" ToRole="Employee" />
+        </EntityType>
+        <EntityType Name="SchedulePerfomance">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PerformanceId" Type="Int32" />
+          <Property Name="Time" Type="Time" Precision="7" />
+          <Property Name="EmployeeId" Type="Int32" />
+          <Property Name="AnimalId" Type="Int32" />
+          <NavigationProperty Name="Animal" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Animal" FromRole="SchedulePerfomance" ToRole="Animal" />
+          <NavigationProperty Name="Employee" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Employee" FromRole="SchedulePerfomance" ToRole="Employee" />
+          <NavigationProperty Name="Performance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Performance" FromRole="SchedulePerfomance" ToRole="Performance" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TicketSale">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PerformanceId" Type="Int32" />
+          <Property Name="ClientId" Type="Int32" />
+          <NavigationProperty Name="Client" Relationship="LosevMatveev326Model.FK_TicketSale_Client" FromRole="TicketSale" ToRole="Client" />
+          <NavigationProperty Name="Performance" Relationship="LosevMatveev326Model.FK_TicketSale_Performance" FromRole="TicketSale" ToRole="Performance" />
+        </EntityType>
+        <EntityType Name="TypeAnimal">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Animal" Relationship="LosevMatveev326Model.FK_Animal_TypeAnimal" FromRole="TypeAnimal" ToRole="Animal" />
+        </EntityType>
+        <EntityType Name="TypeItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Item" Relationship="LosevMatveev326Model.FK_Item_TypeItem" FromRole="TypeItem" ToRole="Item" />
+        </EntityType>
+        <Association Name="FK_Animal_Cage">
+          <End Type="LosevMatveev326Model.Cage" Role="Cage" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cage">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="CageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Animal_TypeAnimal">
+          <End Type="LosevMatveev326Model.TypeAnimal" Role="TypeAnimal" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeAnimal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Animal">
+              <PropertyRef Name="TypeAnimalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchedulePerfomance_Animal">
+          <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.SchedulePerfomance" Role="SchedulePerfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Animal">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SchedulePerfomance">
+              <PropertyRef Name="AnimalId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketSale_Client">
+          <End Type="LosevMatveev326Model.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.TicketSale" Role="TicketSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Client">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TicketSale">
+              <PropertyRef Name="ClientId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Employee_Post">
+          <End Type="LosevMatveev326Model.Post" Role="Post" Multiplicity="1" />
+          <End Type="LosevMatveev326Model.Employee" Role="Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Post">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Employee">
+              <PropertyRef Name="PostId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemEmployee_Employee">
+          <End Type="LosevMatveev326Model.Employee" Role="Employee" Multiplicity="1" />
+          <End Type="LosevMatveev326Model.ItemEmployee" Role="ItemEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemEmployee">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchedulePerfomance_Employee">
+          <End Type="LosevMatveev326Model.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.SchedulePerfomance" Role="SchedulePerfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Employee">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SchedulePerfomance">
+              <PropertyRef Name="EmployeeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Item_TypeItem">
+          <End Type="LosevMatveev326Model.TypeItem" Role="TypeItem" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Item" Role="Item" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TypeItem">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Item">
+              <PropertyRef Name="TypeItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ItemEmployee_Item">
+          <End Type="LosevMatveev326Model.Item" Role="Item" Multiplicity="1" />
+          <End Type="LosevMatveev326Model.ItemEmployee" Role="ItemEmployee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="ItemEmployee">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SchedulePerfomance_Performance">
+          <End Type="LosevMatveev326Model.Performance" Role="Performance" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.SchedulePerfomance" Role="SchedulePerfomance" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Performance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="SchedulePerfomance">
+              <PropertyRef Name="PerformanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TicketSale_Performance">
+          <End Type="LosevMatveev326Model.Performance" Role="Performance" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.TicketSale" Role="TicketSale" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Performance">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TicketSale">
+              <PropertyRef Name="PerformanceId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="Хранилище LosevMatveev326ModelContainer" CdmEntityContainer="LosevMatveev326Entities">
+          <EntitySetMapping Name="Animal">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Animal">
+              <MappingFragment StoreEntitySet="Animal">
+                <ScalarProperty Name="CageId" ColumnName="CageId" />
+                <ScalarProperty Name="TypeAnimalId" ColumnName="TypeAnimalId" />
+                <ScalarProperty Name="Age" ColumnName="Age" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Cage">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Cage">
+              <MappingFragment StoreEntitySet="Cage">
+                <ScalarProperty Name="Square" ColumnName="Square" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Client">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Client">
+              <MappingFragment StoreEntitySet="Client">
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Employee">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Employee">
+              <MappingFragment StoreEntitySet="Employee">
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="Salary" ColumnName="Salary" />
+                <ScalarProperty Name="Birthday" ColumnName="Birthday" />
+                <ScalarProperty Name="PostId" ColumnName="PostId" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Patronymic" ColumnName="Patronymic" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="TypeItemId" ColumnName="TypeItemId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ItemEmployee">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.ItemEmployee">
+              <MappingFragment StoreEntitySet="ItemEmployee">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Performance">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Performance">
+              <MappingFragment StoreEntitySet="Performance">
+                <ScalarProperty Name="TicketAmount" ColumnName="TicketAmount" />
+                <ScalarProperty Name="TicketPrice" ColumnName="TicketPrice" />
+                <ScalarProperty Name="DateTime" ColumnName="DateTime" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Post">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.Post">
+              <MappingFragment StoreEntitySet="Post">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SchedulePerfomance">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.SchedulePerfomance">
+              <MappingFragment StoreEntitySet="SchedulePerfomance">
+                <ScalarProperty Name="AnimalId" ColumnName="AnimalId" />
+                <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="PerformanceId" ColumnName="PerformanceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TicketSale">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.TicketSale">
+              <MappingFragment StoreEntitySet="TicketSale">
+                <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+                <ScalarProperty Name="PerformanceId" ColumnName="PerformanceId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeAnimal">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.TypeAnimal">
+              <MappingFragment StoreEntitySet="TypeAnimal">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TypeItem">
+            <EntityTypeMapping TypeName="LosevMatveev326Model.TypeItem">
+              <MappingFragment StoreEntitySet="TypeItem">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

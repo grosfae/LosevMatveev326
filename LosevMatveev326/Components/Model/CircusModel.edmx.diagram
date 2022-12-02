@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="59c19d65bb4a4f68a3cdc3ffd50ebb64" Name="Diagram1">
+        <EntityTypeShape EntityType="LosevMatveev326Model.Animal" Width="1.5" PointX="0.75" PointY="15.75" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Cage" Width="1.5" PointX="1.5" PointY="22.25" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Client" Width="1.5" PointX="0.75" PointY="24.875" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Employee" Width="1.5" PointX="0.75" PointY="7.5" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Item" Width="1.5" PointX="8" PointY="2.25" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.ItemEmployee" Width="1.5" PointX="10.25" PointY="5.75" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Performance" Width="1.5" PointX="0.75" PointY="3.875" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Post" Width="1.5" PointX="1.5" PointY="12.5" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.SchedulePerfomance" Width="1.5" PointX="3" PointY="0.75" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="7" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.TicketSale" Width="1.5" PointX="3" PointY="4" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.TypeAnimal" Width="1.5" PointX="1.5" PointY="20" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.TypeItem" Width="1.5" PointX="5.75" PointY="2.5" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_Animal_Cage" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_Animal_TypeAnimal" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_SchedulePerfomance_Animal" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_TicketSale_Client" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_Employee_Post" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_ItemEmployee_Employee" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_SchedulePerfomance_Employee" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_Item_TypeItem" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_ItemEmployee_Item" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_SchedulePerfomance_Performance" />
+        <AssociationConnector Association="LosevMatveev326Model.FK_TicketSale_Performance" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
