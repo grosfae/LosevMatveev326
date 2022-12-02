@@ -23,6 +23,10 @@ namespace LosevMatveev326.Pages
         public LoginPage()
         {
             InitializeComponent();
+            if (Properties.Settings.Default.Phone != null)
+                TbPhone.Text = Properties.Settings.Default.Phone;
+            if (Properties.Settings.Default.Password != null)
+                PbPassword.Password = Properties.Settings.Default.Password;
         }
 
         private void BtnLogin_Click(object sender, RoutedEventArgs e)
@@ -37,6 +41,18 @@ namespace LosevMatveev326.Pages
             {
                 MessageBox.Show("Пароль неверный");
                 return;
+            }
+            if (SaveCb.IsChecked == true)
+            {
+                Properties.Settings.Default.Phone = TbPhone.Text;
+                Properties.Settings.Default.Password = PbPassword.Password;
+                Properties.Settings.Default.Save();
+            }
+            else
+            {
+                Properties.Settings.Default.Phone = null;
+                Properties.Settings.Default.Password = null;
+                Properties.Settings.Default.Save();
             }
             App.LoggedEmployee = employee;
             NavigationService.Navigate(new MainPage());
