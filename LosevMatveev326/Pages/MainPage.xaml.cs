@@ -29,5 +29,10 @@ namespace LosevMatveev326.Pages
         {
             MenuFrame.Navigate(new AnimalsPage());
         }
+
+        private void BtnEmployeeManagment_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFrame.Navigate(new EmployeesPage());
+        }
     }
 }

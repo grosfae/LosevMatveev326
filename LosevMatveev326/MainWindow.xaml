@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:LosevMatveev326"
         mc:Ignorable="d"
         ResizeMode="CanMinimize"
-        Title="MainWindow" Height="600" Width="900">
+        Title="BozoCircus" Height="600" Width="900">
     <Grid>
         <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden">
             

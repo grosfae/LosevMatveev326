@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="59c19d65bb4a4f68a3cdc3ffd50ebb64" Name="Diagram1">
         <EntityTypeShape EntityType="LosevMatveev326Model.Animal" Width="1.5" PointX="0.75" PointY="15.75" />
-        <EntityTypeShape EntityType="LosevMatveev326Model.Cage" Width="1.5" PointX="1.5" PointY="22.25" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.Cage" Width="1.5" PointX="1.5" PointY="20" />
         <EntityTypeShape EntityType="LosevMatveev326Model.Client" Width="1.5" PointX="0.75" PointY="24.875" />
         <EntityTypeShape EntityType="LosevMatveev326Model.Employee" Width="1.5" PointX="0.75" PointY="7.5" />
         <EntityTypeShape EntityType="LosevMatveev326Model.Item" Width="1.5" PointX="8" PointY="2.25" />
@@ -16,7 +16,7 @@
         <EntityTypeShape EntityType="LosevMatveev326Model.SchedulePerfomance" Width="1.5" PointX="3" PointY="0.75" />
         <EntityTypeShape EntityType="LosevMatveev326Model.sysdiagrams" Width="1.5" PointX="2.75" PointY="7" />
         <EntityTypeShape EntityType="LosevMatveev326Model.TicketSale" Width="1.5" PointX="3" PointY="4" />
-        <EntityTypeShape EntityType="LosevMatveev326Model.TypeAnimal" Width="1.5" PointX="1.5" PointY="20" />
+        <EntityTypeShape EntityType="LosevMatveev326Model.TypeAnimal" Width="1.5" PointX="1.5" PointY="22.5" />
         <EntityTypeShape EntityType="LosevMatveev326Model.TypeItem" Width="1.5" PointX="5.75" PointY="2.5" />
         <AssociationConnector Association="LosevMatveev326Model.FK_Animal_Cage" />
         <AssociationConnector Association="LosevMatveev326Model.FK_Animal_TypeAnimal" />

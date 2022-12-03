@@ -138,6 +138,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\EmployeeAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\EmployeesPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -153,6 +161,12 @@
     </Compile>
     <Compile Include="Pages\AnimalsPage.xaml.cs">
       <DependentUpon>AnimalsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeeAddEdit.xaml.cs">
+      <DependentUpon>EmployeeAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\EmployeesPage.xaml.cs">
+      <DependentUpon>EmployeesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
@@ -205,6 +219,8 @@
       <DependentUpon>CircusModel.edmx</DependentUpon>
       <LastGenOutput>CircusModel.cs</LastGenOutput>
     </Content>
+    <Resource Include="Resources\colorsbt.png" />
+    <Resource Include="Resources\Bclg.png" />
     <Resource Include="Resources\LogoCircus.png" />
   </ItemGroup>
   <ItemGroup>
