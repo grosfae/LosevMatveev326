@@ -35,8 +35,48 @@ namespace LosevMatveev326.Pages
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
-            string error = "";
-            //валидацию скопировать
+            string errorMessage = "";
+            if (string.IsNullOrWhiteSpace(contextEmployee.FirstName))
+            {
+                errorMessage += "Введите ммя\n";
+            }
+            if (string.IsNullOrWhiteSpace(contextEmployee.LastName))
+            {
+                errorMessage += "Введите фамилию\n";
+            }
+            if (string.IsNullOrWhiteSpace(contextEmployee.Patronymic))
+            {
+                errorMessage += "Введите отчество\n";
+            }
+            if (string.IsNullOrWhiteSpace(contextEmployee.Phone))
+            {
+                errorMessage += "Введите телефон\n";
+            }
+            if (string.IsNullOrWhiteSpace(contextEmployee.Address))
+            {
+                errorMessage += "Введите адрес\n";
+            }
+            if (contextEmployee.Post == null)
+            {
+                errorMessage += "Выберите должность\n";
+            }
+            if (contextEmployee.Birthday == null)
+            {
+                errorMessage += "Выберите дату\n";
+            }
+            if (string.IsNullOrWhiteSpace(contextEmployee.Address))
+            {
+                errorMessage += "Введите зарплату\n";
+            }
+            if (string.IsNullOrWhiteSpace(contextEmployee.Address))
+            {
+                errorMessage += "Введите пароль\n";
+            }
+            if (string.IsNullOrWhiteSpace(errorMessage) == false)
+            {
+                MessageBox.Show(errorMessage);
+                return;
+            }
             if (contextEmployee.Id == 0)
             {
                 App.DB.Employee.Add(contextEmployee);

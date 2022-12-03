@@ -35,14 +35,7 @@ namespace LosevMatveev326.Pages
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
-            {
-                MessageBox.Show("Выберите сотрудника");
-                return;
-            }
-            App.DB.Employee.Remove(selectedEmployee);
-            App.DB.SaveChanges();
-            Refresh();
+            NavigationService.Navigate(new EmployeeAddEdit(selectedEmployee));
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
