@@ -10,53 +10,53 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Age" Type="int" />
-          <Property Name="TypeAnimalId" Type="int" />
-          <Property Name="CageId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Age" Type="int" Nullable="false" />
+          <Property Name="TypeAnimalId" Type="int" Nullable="false" />
+          <Property Name="CageId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Cage">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="Square" Type="decimal" Precision="18" Scale="1" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Square" Type="decimal" Precision="18" Scale="1" Nullable="false" />
         </EntityType>
         <EntityType Name="Client">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
-          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Employee">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="LastName" Type="nvarchar" MaxLength="50" />
-          <Property Name="FirstName" Type="nvarchar" MaxLength="50" />
-          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" />
-          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
-          <Property Name="Address" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Patronymic" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="Address" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="PostId" Type="int" Nullable="false" />
-          <Property Name="Birthday" Type="date" />
-          <Property Name="Salary" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Birthday" Type="date" Nullable="false" />
+          <Property Name="Salary" Type="decimal" Precision="18" Scale="2" Nullable="false" />
           <Property Name="Image" Type="image" />
-          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="TypeItemId" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="TypeItemId" Type="int" Nullable="false" />
           <Property Name="Image" Type="varchar(max)" />
         </EntityType>
         <EntityType Name="ItemEmployee">
@@ -72,27 +72,27 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
-          <Property Name="DateTime" Type="datetime" />
-          <Property Name="TicketPrice" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="TicketAmount" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="DateTime" Type="datetime" Nullable="false" />
+          <Property Name="TicketPrice" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="TicketAmount" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Post">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="SchedulePerfomance">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PerformanceId" Type="int" />
-          <Property Name="Time" Type="time" Precision="7" />
-          <Property Name="EmployeeId" Type="int" />
-          <Property Name="AnimalId" Type="int" />
+          <Property Name="PerformanceId" Type="int" Nullable="false" />
+          <Property Name="Time" Type="time" Precision="7" Nullable="false" />
+          <Property Name="EmployeeId" Type="int" Nullable="false" />
+          <Property Name="AnimalId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -109,25 +109,25 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="PerformanceId" Type="int" />
-          <Property Name="ClientId" Type="int" />
+          <Property Name="PerformanceId" Type="int" Nullable="false" />
+          <Property Name="ClientId" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="TypeAnimal">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="TypeItem">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <Association Name="FK_Animal_Cage">
-          <End Role="Cage" Type="Self.Cage" Multiplicity="0..1" />
+          <End Role="Cage" Type="Self.Cage" Multiplicity="1" />
           <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cage">
@@ -139,7 +139,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Animal_TypeAnimal">
-          <End Role="TypeAnimal" Type="Self.TypeAnimal" Multiplicity="0..1" />
+          <End Role="TypeAnimal" Type="Self.TypeAnimal" Multiplicity="1" />
           <End Role="Animal" Type="Self.Animal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeAnimal">
@@ -163,7 +163,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Item_TypeItem">
-          <End Role="TypeItem" Type="Self.TypeItem" Multiplicity="0..1" />
+          <End Role="TypeItem" Type="Self.TypeItem" Multiplicity="1" />
           <End Role="Item" Type="Self.Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeItem">
@@ -199,7 +199,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SchedulePerfomance_Animal">
-          <End Role="Animal" Type="Self.Animal" Multiplicity="0..1" />
+          <End Role="Animal" Type="Self.Animal" Multiplicity="1" />
           <End Role="SchedulePerfomance" Type="Self.SchedulePerfomance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Animal">
@@ -211,7 +211,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SchedulePerfomance_Employee">
-          <End Role="Employee" Type="Self.Employee" Multiplicity="0..1" />
+          <End Role="Employee" Type="Self.Employee" Multiplicity="1" />
           <End Role="SchedulePerfomance" Type="Self.SchedulePerfomance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -223,7 +223,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SchedulePerfomance_Performance">
-          <End Role="Performance" Type="Self.Performance" Multiplicity="0..1" />
+          <End Role="Performance" Type="Self.Performance" Multiplicity="1" />
           <End Role="SchedulePerfomance" Type="Self.SchedulePerfomance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Performance">
@@ -235,7 +235,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketSale_Client">
-          <End Role="Client" Type="Self.Client" Multiplicity="0..1" />
+          <End Role="Client" Type="Self.Client" Multiplicity="1" />
           <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Client">
@@ -247,7 +247,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketSale_Performance">
-          <End Role="Performance" Type="Self.Performance" Multiplicity="0..1" />
+          <End Role="Performance" Type="Self.Performance" Multiplicity="1" />
           <End Role="TicketSale" Type="Self.TicketSale" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Performance">
@@ -385,10 +385,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Age" Type="Int32" />
-          <Property Name="TypeAnimalId" Type="Int32" />
-          <Property Name="CageId" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Age" Type="Int32" Nullable="false" />
+          <Property Name="TypeAnimalId" Type="Int32" Nullable="false" />
+          <Property Name="CageId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cage" Relationship="LosevMatveev326Model.FK_Animal_Cage" FromRole="Animal" ToRole="Cage" />
           <NavigationProperty Name="TypeAnimal" Relationship="LosevMatveev326Model.FK_Animal_TypeAnimal" FromRole="Animal" ToRole="TypeAnimal" />
           <NavigationProperty Name="SchedulePerfomance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Animal" FromRole="Animal" ToRole="SchedulePerfomance" />
@@ -398,8 +398,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Square" Type="Decimal" Precision="18" Scale="1" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Square" Type="Decimal" Nullable="false" Precision="18" Scale="1" />
           <NavigationProperty Name="Animal" Relationship="LosevMatveev326Model.FK_Animal_Cage" FromRole="Cage" ToRole="Animal" />
         </EntityType>
         <EntityType Name="Client">
@@ -407,11 +407,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="TicketSale" Relationship="LosevMatveev326Model.FK_TicketSale_Client" FromRole="Client" ToRole="TicketSale" />
         </EntityType>
         <EntityType Name="Employee">
@@ -419,16 +419,16 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="LastName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="FirstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Patronymic" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Patronymic" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="PostId" Type="Int32" Nullable="false" />
-          <Property Name="Birthday" Type="DateTime" Precision="0" />
-          <Property Name="Salary" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Birthday" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Salary" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
           <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Post" Relationship="LosevMatveev326Model.FK_Employee_Post" FromRole="Employee" ToRole="Post" />
           <NavigationProperty Name="ItemEmployee" Relationship="LosevMatveev326Model.FK_ItemEmployee_Employee" FromRole="Employee" ToRole="ItemEmployee" />
           <NavigationProperty Name="SchedulePerfomance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Employee" FromRole="Employee" ToRole="SchedulePerfomance" />
@@ -438,8 +438,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="TypeItemId" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TypeItemId" Type="Int32" Nullable="false" />
           <Property Name="Image" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TypeItem" Relationship="LosevMatveev326Model.FK_Item_TypeItem" FromRole="Item" ToRole="TypeItem" />
           <NavigationProperty Name="ItemEmployee" Relationship="LosevMatveev326Model.FK_ItemEmployee_Item" FromRole="Item" ToRole="ItemEmployee" />
@@ -459,10 +459,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="DateTime" Type="DateTime" Precision="3" />
-          <Property Name="TicketPrice" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="TicketAmount" Type="Int32" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TicketPrice" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="TicketAmount" Type="Int32" Nullable="false" />
           <NavigationProperty Name="SchedulePerfomance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Performance" FromRole="Performance" ToRole="SchedulePerfomance" />
           <NavigationProperty Name="TicketSale" Relationship="LosevMatveev326Model.FK_TicketSale_Performance" FromRole="Performance" ToRole="TicketSale" />
         </EntityType>
@@ -471,7 +471,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Employee" Relationship="LosevMatveev326Model.FK_Employee_Post" FromRole="Post" ToRole="Employee" />
         </EntityType>
         <EntityType Name="SchedulePerfomance">
@@ -479,10 +479,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PerformanceId" Type="Int32" />
-          <Property Name="Time" Type="Time" Precision="7" />
-          <Property Name="EmployeeId" Type="Int32" />
-          <Property Name="AnimalId" Type="Int32" />
+          <Property Name="PerformanceId" Type="Int32" Nullable="false" />
+          <Property Name="Time" Type="Time" Nullable="false" Precision="7" />
+          <Property Name="EmployeeId" Type="Int32" Nullable="false" />
+          <Property Name="AnimalId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Animal" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Animal" FromRole="SchedulePerfomance" ToRole="Animal" />
           <NavigationProperty Name="Employee" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Employee" FromRole="SchedulePerfomance" ToRole="Employee" />
           <NavigationProperty Name="Performance" Relationship="LosevMatveev326Model.FK_SchedulePerfomance_Performance" FromRole="SchedulePerfomance" ToRole="Performance" />
@@ -502,8 +502,8 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="PerformanceId" Type="Int32" />
-          <Property Name="ClientId" Type="Int32" />
+          <Property Name="PerformanceId" Type="Int32" Nullable="false" />
+          <Property Name="ClientId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Client" Relationship="LosevMatveev326Model.FK_TicketSale_Client" FromRole="TicketSale" ToRole="Client" />
           <NavigationProperty Name="Performance" Relationship="LosevMatveev326Model.FK_TicketSale_Performance" FromRole="TicketSale" ToRole="Performance" />
         </EntityType>
@@ -512,7 +512,7 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Animal" Relationship="LosevMatveev326Model.FK_Animal_TypeAnimal" FromRole="TypeAnimal" ToRole="Animal" />
         </EntityType>
         <EntityType Name="TypeItem">
@@ -520,11 +520,11 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Item" Relationship="LosevMatveev326Model.FK_Item_TypeItem" FromRole="TypeItem" ToRole="Item" />
         </EntityType>
         <Association Name="FK_Animal_Cage">
-          <End Type="LosevMatveev326Model.Cage" Role="Cage" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Cage" Role="Cage" Multiplicity="1" />
           <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Cage">
@@ -536,7 +536,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Animal_TypeAnimal">
-          <End Type="LosevMatveev326Model.TypeAnimal" Role="TypeAnimal" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.TypeAnimal" Role="TypeAnimal" Multiplicity="1" />
           <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeAnimal">
@@ -548,7 +548,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SchedulePerfomance_Animal">
-          <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Animal" Role="Animal" Multiplicity="1" />
           <End Type="LosevMatveev326Model.SchedulePerfomance" Role="SchedulePerfomance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Animal">
@@ -560,7 +560,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketSale_Client">
-          <End Type="LosevMatveev326Model.Client" Role="Client" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Client" Role="Client" Multiplicity="1" />
           <End Type="LosevMatveev326Model.TicketSale" Role="TicketSale" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Client">
@@ -596,7 +596,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SchedulePerfomance_Employee">
-          <End Type="LosevMatveev326Model.Employee" Role="Employee" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Employee" Role="Employee" Multiplicity="1" />
           <End Type="LosevMatveev326Model.SchedulePerfomance" Role="SchedulePerfomance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Employee">
@@ -608,7 +608,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Item_TypeItem">
-          <End Type="LosevMatveev326Model.TypeItem" Role="TypeItem" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.TypeItem" Role="TypeItem" Multiplicity="1" />
           <End Type="LosevMatveev326Model.Item" Role="Item" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TypeItem">
@@ -632,7 +632,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_SchedulePerfomance_Performance">
-          <End Type="LosevMatveev326Model.Performance" Role="Performance" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Performance" Role="Performance" Multiplicity="1" />
           <End Type="LosevMatveev326Model.SchedulePerfomance" Role="SchedulePerfomance" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Performance">
@@ -644,7 +644,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TicketSale_Performance">
-          <End Type="LosevMatveev326Model.Performance" Role="Performance" Multiplicity="0..1" />
+          <End Type="LosevMatveev326Model.Performance" Role="Performance" Multiplicity="1" />
           <End Type="LosevMatveev326Model.TicketSale" Role="TicketSale" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Performance">

@@ -22,7 +22,7 @@ namespace LosevMatveev326.Components.Model
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> TypeItemId { get; set; }
+        public int TypeItemId { get; set; }
         public string Image { get; set; }
     
         public virtual TypeItem TypeItem { get; set; }

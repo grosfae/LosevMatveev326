@@ -22,9 +22,9 @@ namespace LosevMatveev326.Components.Model
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public Nullable<int> Age { get; set; }
-        public Nullable<int> TypeAnimalId { get; set; }
-        public Nullable<int> CageId { get; set; }
+        public int Age { get; set; }
+        public int TypeAnimalId { get; set; }
+        public int CageId { get; set; }
     
         public virtual Cage Cage { get; set; }
         public virtual TypeAnimal TypeAnimal { get; set; }
