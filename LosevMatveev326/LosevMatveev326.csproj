@@ -72,6 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Components\ModelEnums\CircusPosts.cs" />
     <Compile Include="Components\Model\Animal.cs">
       <DependentUpon>CircusModel.tt</DependentUpon>
     </Compile>

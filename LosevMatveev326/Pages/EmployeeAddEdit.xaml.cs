@@ -1,6 +1,8 @@
 ﻿using LosevMatveev326.Components.Model;
+using Microsoft.Win32;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -34,6 +36,7 @@ namespace LosevMatveev326.Pages
         private void BtnSave_Click(object sender, RoutedEventArgs e)
         {
             string error = "";
+            //валидацию скопировать
             if (contextEmployee.Id == 0)
             {
                 App.DB.Employee.Add(contextEmployee);
@@ -50,7 +53,13 @@ namespace LosevMatveev326.Pages
 
         private void BtnEditImage_Click(object sender, RoutedEventArgs e)
         {
-            
+            var dialog = new OpenFileDialog();
+            if(dialog.ShowDialog().GetValueOrDefault())
+            {
+                contextEmployee.Image = File.ReadAllBytes(dialog.FileName);
+                DataContext = null;
+                DataContext = contextEmployee;
+            }
         }
         private void FullName_PreviewTextImput(object sender, TextCompositionEventArgs e)
         {

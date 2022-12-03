@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LosevMatveev326.Components.ModelEnums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,6 +24,21 @@ namespace LosevMatveev326.Pages
         public MainPage()
         {
             InitializeComponent();
+            if (App.LoggedEmployee.PostId == (int)CircusPosts.HRManager)
+            {
+                BtnEmployeeManagment.Visibility = Visibility.Visible;
+                MenuFrame.Navigate(new EmployeesPage());
+            }
+            if (App.LoggedEmployee.PostId == (int)CircusPosts.Trainer)
+            {
+                BtnAmimalManagment.Visibility = Visibility.Visible;
+                MenuFrame.Navigate(new AnimalsPage());
+            }
+            if (App.LoggedEmployee.PostId == (int)CircusPosts.Director)
+            {
+                BtnAmimalManagment.Visibility = Visibility.Visible;
+                BtnEmployeeManagment.Visibility = Visibility.Visible;
+            }
         }
 
         private void BtnAmimalManagment_Click(object sender, RoutedEventArgs e)

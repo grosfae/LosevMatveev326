@@ -18,11 +18,11 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <StackPanel Background="Bisque" Grid.ColumnSpan="2" Height="50">
-            <TextBlock Text="CIRCUS" HorizontalAlignment="Center" Height="30"/>
+            <TextBlock Text="CIRCUS" HorizontalAlignment="Center" FontSize="30"/>
         </StackPanel>
         <StackPanel Grid.Row="1">
-            <Button x:Name="BtnAmimalManagment" Content="Управление животными" Click="BtnAmimalManagment_Click"/>
-            <Button x:Name="BtnEmployeeManagment" Content="Управление сотрудниками" Click="BtnEmployeeManagment_Click"/>
+            <Button x:Name="BtnAmimalManagment" Content="Управление животными" Click="BtnAmimalManagment_Click" Visibility="Collapsed"/>
+            <Button x:Name="BtnEmployeeManagment" Content="Управление сотрудниками" Click="BtnEmployeeManagment_Click" Visibility="Collapsed"/>
         </StackPanel>
         <Frame x:Name="MenuFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1"/>
     </Grid>

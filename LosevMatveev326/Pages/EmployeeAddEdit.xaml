@@ -36,7 +36,7 @@
             <Button x:Name="BtnCancel" Content="Отмена" Click="BtnCancel_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
-            <Image Height="300"/>
+            <Image Height="300" Source="{Binding Image}"/>
             <Button x:Name="BtnEditImage" Content="Изменить фото" Click="BtnEditImage_Click"/>
         </StackPanel>
     </Grid>

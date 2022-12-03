@@ -29,13 +29,20 @@ namespace LosevMatveev326.Pages
 
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EmployeeAddEdit(new Employee()));
+            NavigationService.Navigate(new EmployeeAddEdit(new Employee() {Birthday = DateTime.Now.Date}));
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            NavigationService.Navigate(new EmployeeAddEdit(selectedEmployee));
+            if (selectedEmployee == null)
+            {
+                MessageBox.Show("Выберите сотрудника");
+                return;
+            }
+            App.DB.Employee.Remove(selectedEmployee);
+            App.DB.SaveChanges();
+            Refresh();
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
@@ -43,7 +50,7 @@ namespace LosevMatveev326.Pages
             var selectedEmployee = LvEmployees.SelectedItem as Employee;
             if (selectedEmployee == null)
             {
-                MessageBox.Show("Выберите животное");
+                MessageBox.Show("Выберите сотрудника");
                 return;
             }
             App.DB.Employee.Remove(selectedEmployee);
