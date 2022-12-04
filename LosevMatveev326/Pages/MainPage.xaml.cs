@@ -50,5 +50,10 @@ namespace LosevMatveev326.Pages
         {
             MenuFrame.Navigate(new EmployeesPage());
         }
+
+        private void BtnSolitaire_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFrame.Navigate(new SolitairePage());
+        }
     }
 }

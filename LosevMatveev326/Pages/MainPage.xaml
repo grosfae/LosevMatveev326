@@ -23,6 +23,7 @@
         <StackPanel Grid.Row="1">
             <Button x:Name="BtnAmimalManagment" Content="Управление животными" Click="BtnAmimalManagment_Click" Visibility="Collapsed"/>
             <Button x:Name="BtnEmployeeManagment" Content="Управление сотрудниками" Click="BtnEmployeeManagment_Click" Visibility="Collapsed"/>
+            <Button x:Name="BtnSolitaire" Content="Разложить пасьянс" Click="BtnSolitaire_Click"/>
         </StackPanel>
         <Frame x:Name="MenuFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1"/>
     </Grid>
