@@ -5,6 +5,16 @@ VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LosevMatveev326", "LosevMatveev326\LosevMatveev326.csproj", "{393F315C-93B8-4ECC-8E31-0148A31CFD1B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HRManager App", "HRManager App\HRManager App.csproj", "{7CA331C0-20E5-4323-9C87-F751804D2598}"
+	ProjectSection(ProjectDependencies) = postProject
+		{393F315C-93B8-4ECC-8E31-0148A31CFD1B} = {393F315C-93B8-4ECC-8E31-0148A31CFD1B}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerApp", "TrainerApp\TrainerApp.csproj", "{247C2B91-B556-4B4D-BBF3-C73CC556F594}"
+	ProjectSection(ProjectDependencies) = postProject
+		{393F315C-93B8-4ECC-8E31-0148A31CFD1B} = {393F315C-93B8-4ECC-8E31-0148A31CFD1B}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +25,14 @@ Global
 		{393F315C-93B8-4ECC-8E31-0148A31CFD1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{393F315C-93B8-4ECC-8E31-0148A31CFD1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{393F315C-93B8-4ECC-8E31-0148A31CFD1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CA331C0-20E5-4323-9C87-F751804D2598}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CA331C0-20E5-4323-9C87-F751804D2598}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CA331C0-20E5-4323-9C87-F751804D2598}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7CA331C0-20E5-4323-9C87-F751804D2598}.Release|Any CPU.Build.0 = Release|Any CPU
+		{247C2B91-B556-4B4D-BBF3-C73CC556F594}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{247C2B91-B556-4B4D-BBF3-C73CC556F594}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{247C2B91-B556-4B4D-BBF3-C73CC556F594}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{247C2B91-B556-4B4D-BBF3-C73CC556F594}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,8 +9,6 @@
       Title="SolitairePage">
 
     <Grid>
-        <WebBrowser Source="http://sdelayhod.ru/patiences/sol/">
-            
-        </WebBrowser>
+        <WebBrowser Source="http://sdelayhod.ru/patiences/sol/"/>
     </Grid>
 </Page>

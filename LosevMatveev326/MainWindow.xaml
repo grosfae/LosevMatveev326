@@ -8,8 +8,6 @@
         ResizeMode="CanMinimize"
         Title="BozoCircus" Height="600" Width="900">
     <Grid>
-        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden">
-            
-        </Frame>
+        <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden"/>
     </Grid>
 </Window>
