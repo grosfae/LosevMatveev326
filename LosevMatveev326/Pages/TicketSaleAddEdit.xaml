@@ -1,4 +1,4 @@
-﻿<Page x:Class="LosevMatveev326.Pages.ItemAddEdit"
+﻿<Page x:Class="LosevMatveev326.Pages.TicketSaleAddEdit"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,26 +6,22 @@
       xmlns:local="clr-namespace:LosevMatveev326.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ItemAddEdit">
+      Title="TicketSaleAddEdit">
 
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <StackPanel Width="300" Height="200">
-            <TextBlock Text="Наименование"/>
-            <TextBox Text="{Binding Name}" MaxLength="150"/>
-            <TextBlock Text="Тип реквизита"/>
-            <ComboBox x:Name="CbType" DisplayMemberPath="Name" SelectedItem="{Binding TypeItem}"/>
+        <StackPanel Width="300" Margin="5">
+            <TextBlock Text="Выступление"/>
+            <ComboBox x:Name="CbPerformance" SelectedItem="{Binding Performance}" DisplayMemberPath="Name"/>
+            <TextBlock Text="Дата выступления"/>
+            <Label Content="{Binding Performance.Date}" Height="20"/>
+            <TextBlock Text="Время выступления"/>
+            <Label Content="{Binding Performance.Time}" Height="20"/>
+            <TextBlock Text="Цена билета"/>
+            <Label Content="{Binding Performance.TicketPrice}" Height="20"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
                 <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="100" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click" Height="25"/>
             </StackPanel>
-        </StackPanel>
-        <StackPanel Grid.Column="1">
-            <Image Height="300" Source="{Binding Image}"/>
-            <Button x:Name="BtnEditImage" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Изменить фото" Click="BtnEditImage_Click"/>
         </StackPanel>
     </Grid>
 </Page>

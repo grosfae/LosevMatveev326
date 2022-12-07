@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -17,50 +18,41 @@ using System.Windows.Shapes;
 namespace LosevMatveev326.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EmployeesPage.xaml
+    /// Логика взаимодействия для TicketSalePage.xaml
     /// </summary>
-    public partial class EmployeesPage : Page
+    public partial class TicketSalePage : Page
     {
-        public EmployeesPage()
+        public TicketSalePage()
         {
             InitializeComponent();
-            if (App.LoggedEmployee.Post.Id == 4)
-            {
-                LvEmployees.ItemsSource = App.DB.Employee.Where(x => x.PostId != 4).ToList();
-            }
-            if (App.LoggedEmployee.Post.Id == 5)
-            {
-                LvEmployees.ItemsSource = App.DB.Employee.Where(x => x.PostId != 4 & x.PostId != 5).ToList();
-            }
-            
+            LvTickets.ItemsSource = App.DB.TicketSale.ToList();
         }
-
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EmployeeAddEdit(new Employee() {Birthday = DateTime.Now.Date}));
+            NavigationService.Navigate(new TicketSaleAddEdit(new TicketSale()));
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
+            var selectedTicket = LvTickets.SelectedItem as TicketSale;
+            if (selectedTicket == null)
             {
-                MessageBox.Show("Выберите сотрудника");
+                MessageBox.Show("Выберите билет");
                 return;
             }
-            NavigationService.Navigate(new EmployeeAddEdit(selectedEmployee));
+            NavigationService.Navigate(new TicketSaleAddEdit(selectedTicket));
 
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
+            var selectedTicket = LvTickets.SelectedItem as TicketSale;
+            if (selectedTicket == null)
             {
-                MessageBox.Show("Выберите сотрудника");
+                MessageBox.Show("Выберите билет");
                 return;
             }
-            App.DB.Employee.Remove(selectedEmployee);
+            App.DB.TicketSale.Remove(selectedTicket);
             App.DB.SaveChanges();
             Refresh();
         }
@@ -73,11 +65,11 @@ namespace LosevMatveev326.Pages
         {
             if (string.IsNullOrWhiteSpace(TbSearch.Text))
             {
-                LvEmployees.ItemsSource = App.DB.Employee.ToList();
+                LvTickets.ItemsSource = App.DB.TicketSale.ToList();
             }
             else
             {
-                LvEmployees.ItemsSource = App.DB.Employee.Where(a => a.Salary.ToString().Contains(TbSearch.Text.ToLower())).ToList();
+                LvTickets.ItemsSource = App.DB.TicketSale.Where(a => a.Performance.Name.ToString().Contains(TbSearch.Text.ToLower())).ToList();
             }
         }
 

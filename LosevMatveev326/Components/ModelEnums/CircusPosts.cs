@@ -11,8 +11,8 @@ namespace LosevMatveev326.Components.ModelEnums
         Casshier = 1,
         Clown = 2,
         Trainer = 3,
-        Acrobat = 4,
+        Director = 4,
         HRManager = 5,
-        Director = 6
+        Itemkeeper =7
     }
 }

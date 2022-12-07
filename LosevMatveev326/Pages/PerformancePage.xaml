@@ -14,9 +14,9 @@
                 <TextBlock Text="Поиск" Foreground="White" />
                 <TextBox x:Name="TbSearch" Width="200" TextChanged="TbSearch_TextChanged" Height="20"/>
                 <StackPanel Orientation="Horizontal" Margin="250 0 0 0" Height="30">
-                    <Button x:Name="BtnAdd" Content="Добавить" Click="BtnAdd_Click" Background="White" BorderBrush="Transparent" />
-                    <Button x:Name="BtnEdit" Content="Изменить" Click="BtnEdit_Click" Margin="5 0 0 0" Background="White" BorderBrush="Transparent" />
-                    <Button x:Name="BtnDelete" Content="Удалить" Click="BtnDelete_Click" Margin="5 0 0 0" Background="White" BorderBrush="Transparent"/>
+                    <Button x:Name="BtnAdd" Content="Добавить" Click="BtnAdd_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
+                    <Button x:Name="BtnEdit" Content="Изменить" Click="BtnEdit_Click" Margin="5 0 0 0" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
+                    <Button x:Name="BtnDelete" Content="Удалить" Click="BtnDelete_Click" Margin="5 0 0 0" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
                 </StackPanel>
             </StackPanel>
             <ListView x:Name="LvPerformance">
@@ -24,9 +24,9 @@
                     <DataTemplate>
                         <StackPanel>
                             <TextBlock Text="{Binding Name, StringFormat='Название: {0}'}"/>
-                            <TextBlock Text="{Binding Date, StringFormat='Дата: 2dd.mm.yyyy'}"/>
+                            <TextBlock Text="{Binding Date, StringFormat='Дата: dd.mm.yyyy'}"/>
                             <TextBlock Text="{Binding Time, StringFormat='Время: {0}'}"/>
-                            <TextBlock Text="{Binding TicketPrice, StringFormat='Цена билета: {0}'}"/>
+                            <TextBlock Text="{Binding TicketPrice, StringFormat='Цена билета: {0} руб'}"/>
                             <TextBlock Text="{Binding TicketAmount, StringFormat='Количество билетов: {0}'}"/>
                         </StackPanel>
                     </DataTemplate>

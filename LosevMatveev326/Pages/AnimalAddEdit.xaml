@@ -18,8 +18,12 @@
             <ComboBox x:Name="CbTypes" SelectedItem="{Binding TypeAnimal}" DisplayMemberPath="Name"/>
             <TextBlock Text="Клетка"/>
             <ComboBox x:Name="CbCages" SelectedItem="{Binding Cage}" DisplayMemberPath="Name"/>
-            <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
-            <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click"/>
+            <TextBlock Text="Выступающая группа"/>
+            <ComboBox x:Name="CbGroup" DisplayMemberPath="Name" SelectedItem="{Binding Group}"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
+                <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="100" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click" Height="25"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

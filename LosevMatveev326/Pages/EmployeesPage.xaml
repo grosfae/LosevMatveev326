@@ -24,9 +24,10 @@
                     <DataTemplate>
                         <StackPanel>
                             <TextBlock Text="{Binding LastName, StringFormat='Фамилия: {0}'}"/>
-                                <TextBlock Text="{Binding FirstName, StringFormat='Имя: {0}'}"/>
+                            <TextBlock Text="{Binding FirstName, StringFormat='Имя: {0}'}"/>
                                 <TextBlock Text="{Binding Salary, StringFormat='Зарплата: {0}'}"/>
                                 <TextBlock Text="{Binding Post.Name, StringFormat='Должность: {0}'}"/>
+                                <TextBlock Text="{Binding Group.Name, StringFormat='Группа: {0}'}"/>
                                 <Image Source="{Binding Image}" Width="200" />
                             </StackPanel>
                     </DataTemplate>

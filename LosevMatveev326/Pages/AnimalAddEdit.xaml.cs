@@ -27,6 +27,7 @@ namespace LosevMatveev326.Pages
             InitializeComponent();
             CbTypes.ItemsSource = App.DB.TypeAnimal.ToList();
             CbCages.ItemsSource = App.DB.Cage.ToList();
+            CbGroup.ItemsSource = App.DB.Group.ToList();
             contextAnimal = animal;
             DataContext = animal;
         }

@@ -178,6 +178,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\TicketSaleAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\TicketSalePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\AnimalAddEdit.xaml.cs">
@@ -212,6 +220,12 @@
     </Compile>
     <Compile Include="Pages\SolitairePage.xaml.cs">
       <DependentUpon>SolitairePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TicketSaleAddEdit.xaml.cs">
+      <DependentUpon>TicketSaleAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\TicketSalePage.xaml.cs">
+      <DependentUpon>TicketSalePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

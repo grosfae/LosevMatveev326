@@ -29,6 +29,7 @@ namespace LosevMatveev326.Pages
         {
             InitializeComponent();
             CbPost.ItemsSource = App.DB.Post.ToList();
+            CbGroup.ItemsSource = App.DB.Group.ToList();
             contextEmployee = employee;
             DataContext = contextEmployee;
         }
@@ -59,6 +60,10 @@ namespace LosevMatveev326.Pages
             if (contextEmployee.Post == null)
             {
                 errorMessage += "Выберите должность\n";
+            }
+            if (contextEmployee.Post.Id == 4)
+            {
+                errorMessage += "Выберите правильную должность\n";
             }
             if (contextEmployee.Birthday == null)
             {

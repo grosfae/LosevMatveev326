@@ -1,4 +1,5 @@
 ﻿using LosevMatveev326.Components.Model;
+using LosevMatveev326.Components.ModelEnums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,6 +26,12 @@ namespace LosevMatveev326.Pages
         {
             InitializeComponent();
             LvPerformance.ItemsSource = App.DB.Performance.ToList();
+            if (App.LoggedEmployee.PostId != (int)CircusPosts.Clown)
+            {
+                BtnAdd.Visibility = Visibility.Visible;
+                BtnEdit.Visibility = Visibility.Visible;
+                BtnDelete.Visibility = Visibility.Visible;
+            }
         }
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {

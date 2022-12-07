@@ -20,8 +20,10 @@
             <TextBox Text="{Binding TicketPrice}" MaxLength="10"/>
             <TextBlock Text="Количество билетов"/>
             <TextBox Text="{Binding TicketAmount}" MaxLength="6"/>
-            <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
-            <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click"/>
+            <StackPanel Orientation="Horizontal">
+                <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
+                <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="100" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click" Height="25"/>
+            </StackPanel>
         </StackPanel>
     </Grid>
 </Page>

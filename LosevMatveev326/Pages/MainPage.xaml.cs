@@ -1,4 +1,5 @@
-﻿using LosevMatveev326.Components.ModelEnums;
+﻿using LosevMatveev326.Components.Model;
+using LosevMatveev326.Components.ModelEnums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,15 +30,33 @@ namespace LosevMatveev326.Pages
                 BtnEmployeeManagment.Visibility = Visibility.Visible;
                 MenuFrame.Navigate(new EmployeesPage());
             }
+            if (App.LoggedEmployee.PostId == (int)CircusPosts.Itemkeeper)
+            {
+                BtnItemManagment.Visibility = Visibility.Visible;
+                MenuFrame.Navigate(new ItemsPage());
+            }
             if (App.LoggedEmployee.PostId == (int)CircusPosts.Trainer)
             {
                 BtnAmimalManagment.Visibility = Visibility.Visible;
                 MenuFrame.Navigate(new AnimalsPage());
             }
+            if (App.LoggedEmployee.PostId == (int)CircusPosts.Clown)
+            {
+                BtnPerformanceManagment.Visibility = Visibility.Visible;
+                MenuFrame.Navigate(new PerformancePage());
+            }
+            if (App.LoggedEmployee.PostId == (int)CircusPosts.Casshier)
+            {
+                BtnTicketSale.Visibility = Visibility.Visible;
+                MenuFrame.Navigate(new TicketSale());
+            }
             if (App.LoggedEmployee.PostId == (int)CircusPosts.Director)
             {
                 BtnAmimalManagment.Visibility = Visibility.Visible;
                 BtnEmployeeManagment.Visibility = Visibility.Visible;
+                BtnItemManagment.Visibility = Visibility.Visible;
+                BtnPerformanceManagment.Visibility = Visibility.Visible;
+                BtnTicketSale.Visibility = Visibility.Visible;
             }
         }
 
@@ -65,5 +84,11 @@ namespace LosevMatveev326.Pages
         {
             MenuFrame.Navigate(new PerformancePage());
         }
+
+        private void BtnTicketSale_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFrame.Navigate(new TicketSalePage());
+        }
+
     }
 }
