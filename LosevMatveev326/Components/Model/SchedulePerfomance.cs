@@ -16,12 +16,10 @@ namespace LosevMatveev326.Components.Model
     {
         public int Id { get; set; }
         public int PerformanceId { get; set; }
-        public System.TimeSpan Time { get; set; }
-        public int EmployeeId { get; set; }
-        public int AnimalId { get; set; }
+        public int GroupId { get; set; }
     
         public virtual Animal Animal { get; set; }
-        public virtual Employee Employee { get; set; }
+        public virtual Group Group { get; set; }
         public virtual Performance Performance { get; set; }
     }
 }

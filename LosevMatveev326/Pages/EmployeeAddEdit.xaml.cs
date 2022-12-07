@@ -64,7 +64,7 @@ namespace LosevMatveev326.Pages
             {
                 errorMessage += "Выберите дату\n";
             }
-            if (string.IsNullOrWhiteSpace(contextEmployee.Address))
+            if (contextEmployee.Salary == 0)
             {
                 errorMessage += "Введите зарплату\n";
             }

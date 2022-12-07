@@ -18,7 +18,6 @@ namespace LosevMatveev326.Components.Model
         public Employee()
         {
             this.ItemEmployee = new HashSet<ItemEmployee>();
-            this.SchedulePerfomance = new HashSet<SchedulePerfomance>();
         }
     
         public int Id { get; set; }
@@ -32,11 +31,11 @@ namespace LosevMatveev326.Components.Model
         public decimal Salary { get; set; }
         public byte[] Image { get; set; }
         public string Password { get; set; }
+        public Nullable<int> GroupId { get; set; }
     
+        public virtual Group Group { get; set; }
         public virtual Post Post { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ItemEmployee> ItemEmployee { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SchedulePerfomance> SchedulePerfomance { get; set; }
     }
 }

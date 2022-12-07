@@ -45,5 +45,8 @@
             </Setter>
             <Setter Property="FontFamily" Value="Resources/#Museo Cyrl 500"/>
         </Style>
+        <Style TargetType="Button">
+            <Setter Property="Height" Value="25"/>
+        </Style>
     </Application.Resources>
 </Application>

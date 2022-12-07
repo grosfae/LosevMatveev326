@@ -17,42 +17,41 @@ using System.Windows.Shapes;
 namespace LosevMatveev326.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EmployeesPage.xaml
+    /// Логика взаимодействия для PerformancePage.xaml
     /// </summary>
-    public partial class EmployeesPage : Page
+    public partial class PerformancePage : Page
     {
-        public EmployeesPage()
+        public PerformancePage()
         {
             InitializeComponent();
-            LvEmployees.ItemsSource = App.DB.Employee.ToList();
+            LvPerformance.ItemsSource = App.DB.Performance.ToList();
         }
-
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EmployeeAddEdit(new Employee() {Birthday = DateTime.Now.Date}));
+            NavigationService.Navigate(new PerformanceAddEdit(new Performance() { Date = DateTime.Now.Date }));
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
+            var selectedPerformance = LvPerformance.SelectedItem as Performance;
+            if (selectedPerformance == null)
             {
-                MessageBox.Show("Выберите сотрудника");
+                MessageBox.Show("Выберите выступление");
                 return;
             }
-            NavigationService.Navigate(new EmployeeAddEdit(selectedEmployee));
+            NavigationService.Navigate(new PerformanceAddEdit(selectedPerformance));
 
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
+            var selectedPerformance = LvPerformance.SelectedItem as Performance;
+            if (selectedPerformance == null)
             {
-                MessageBox.Show("Выберите сотрудника");
+                MessageBox.Show("Выберите выступление");
                 return;
             }
-            App.DB.Employee.Remove(selectedEmployee);
+            App.DB.Performance.Remove(selectedPerformance);
             App.DB.SaveChanges();
             Refresh();
         }
@@ -65,11 +64,11 @@ namespace LosevMatveev326.Pages
         {
             if (string.IsNullOrWhiteSpace(TbSearch.Text))
             {
-                LvEmployees.ItemsSource = App.DB.Employee.ToList();
+                LvPerformance.ItemsSource = App.DB.Performance.ToList();
             }
             else
             {
-                LvEmployees.ItemsSource = App.DB.Employee.Where(a => a.Salary.ToString().Contains(TbSearch.Text.ToLower())).ToList();
+                LvPerformance.ItemsSource = App.DB.Performance.Where(a => a.Name.ToString().Contains(TbSearch.Text.ToLower())).ToList();
             }
         }
 

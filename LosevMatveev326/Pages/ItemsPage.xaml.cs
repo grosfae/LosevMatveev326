@@ -17,42 +17,41 @@ using System.Windows.Shapes;
 namespace LosevMatveev326.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для EmployeesPage.xaml
+    /// Логика взаимодействия для ItemsPage.xaml
     /// </summary>
-    public partial class EmployeesPage : Page
+    public partial class ItemsPage : Page
     {
-        public EmployeesPage()
+        public ItemsPage()
         {
             InitializeComponent();
-            LvEmployees.ItemsSource = App.DB.Employee.ToList();
+            LvItems.ItemsSource = App.DB.Item.ToList();
         }
-
         private void BtnAdd_Click(object sender, RoutedEventArgs e)
         {
-            NavigationService.Navigate(new EmployeeAddEdit(new Employee() {Birthday = DateTime.Now.Date}));
+            NavigationService.Navigate(new ItemAddEdit(new Item()));
         }
 
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
-            var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
+            var selectedItem = LvItems.SelectedItem as Item;
+            if (selectedItem == null)
             {
-                MessageBox.Show("Выберите сотрудника");
+                MessageBox.Show("Выберите реквизит");
                 return;
             }
-            NavigationService.Navigate(new EmployeeAddEdit(selectedEmployee));
+            NavigationService.Navigate(new ItemAddEdit(selectedItem));
 
         }
 
         private void BtnDelete_Click(object sender, RoutedEventArgs e)
         {
-            var selectedEmployee = LvEmployees.SelectedItem as Employee;
-            if (selectedEmployee == null)
+            var selectedItem = LvItems.SelectedItem as Item;
+            if (selectedItem == null)
             {
-                MessageBox.Show("Выберите сотрудника");
+                MessageBox.Show("Выберите реквизит");
                 return;
             }
-            App.DB.Employee.Remove(selectedEmployee);
+            App.DB.Item.Remove(selectedItem);
             App.DB.SaveChanges();
             Refresh();
         }
@@ -65,11 +64,11 @@ namespace LosevMatveev326.Pages
         {
             if (string.IsNullOrWhiteSpace(TbSearch.Text))
             {
-                LvEmployees.ItemsSource = App.DB.Employee.ToList();
+                LvItems.ItemsSource = App.DB.Item.ToList();
             }
             else
             {
-                LvEmployees.ItemsSource = App.DB.Employee.Where(a => a.Salary.ToString().Contains(TbSearch.Text.ToLower())).ToList();
+                LvItems.ItemsSource = App.DB.Item.Where(a => a.Name.ToString().Contains(TbSearch.Text.ToLower())).ToList();
             }
         }
 

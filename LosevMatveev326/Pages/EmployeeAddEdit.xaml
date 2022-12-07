@@ -13,7 +13,7 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel>
+        <StackPanel Width="300">
             <TextBlock Text="Фамилия"/>
             <TextBox Text="{Binding LastName}" MaxLength="50" PreviewTextInput="FullName_PreviewTextImput"/>
             <TextBlock Text="Имя"/>
@@ -32,12 +32,12 @@
             <TextBox Text="{Binding Salary}" MaxLength="7" PreviewTextInput="Digits_PreviewTextInput"/>
             <TextBlock Text="Пароль"/>
             <TextBox Text="{Binding Password}" MaxLength="50"/>
-            <Button x:Name="BtnSave" Content="Сохранить" Click="BtnSave_Click"/>
-            <Button x:Name="BtnCancel" Content="Отмена" Click="BtnCancel_Click"/>
+            <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
+            <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click"/>
         </StackPanel>
         <StackPanel Grid.Column="1">
             <Image Height="300" Source="{Binding Image}"/>
-            <Button x:Name="BtnEditImage" Content="Изменить фото" Click="BtnEditImage_Click"/>
+            <Button x:Name="BtnEditImage" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Изменить фото" Click="BtnEditImage_Click"/>
         </StackPanel>
     </Grid>
 </Page>

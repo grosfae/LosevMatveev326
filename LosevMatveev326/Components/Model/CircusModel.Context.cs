@@ -29,6 +29,7 @@ namespace LosevMatveev326.Components.Model
         public virtual DbSet<Cage> Cage { get; set; }
         public virtual DbSet<Client> Client { get; set; }
         public virtual DbSet<Employee> Employee { get; set; }
+        public virtual DbSet<Group> Group { get; set; }
         public virtual DbSet<Item> Item { get; set; }
         public virtual DbSet<ItemEmployee> ItemEmployee { get; set; }
         public virtual DbSet<Performance> Performance { get; set; }

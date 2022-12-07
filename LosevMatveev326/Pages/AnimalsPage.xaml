@@ -11,20 +11,22 @@
 
     <Grid>
         <DockPanel>
-            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
-                <TextBlock Text="Поиск"/>
-                <TextBox x:Name="TbSearch" Width="200" TextChanged="TbSearch_TextChanged"/>
-                <Button x:Name="BtnAdd" Content="Добавить" Click="BtnAdd_Click"/>
-                <Button x:Name="BtnEdit" Content="Изменить" Click="BtnEdit_Click"/>
-                <Button x:Name="BtnDelete" Content="Удалить" Click="BtnDelete_Click"/>
+            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Background="Black">
+                <TextBlock Text="Поиск" Foreground="White" />
+                <TextBox x:Name="TbSearch" Width="200" TextChanged="TbSearch_TextChanged" Height="20"/>
+                <StackPanel Orientation="Horizontal" Margin="250 0 0 0" Height="30">
+                    <Button x:Name="BtnAdd" Content="Добавить" Click="BtnAdd_Click" Background="White" BorderBrush="Transparent" />
+                    <Button x:Name="BtnEdit" Content="Изменить" Click="BtnEdit_Click" Margin="5 0 0 0" Background="White" BorderBrush="Transparent" />
+                    <Button x:Name="BtnDelete" Content="Удалить" Click="BtnDelete_Click" Margin="5 0 0 0" Background="White" BorderBrush="Transparent"/>
+                </StackPanel>
             </StackPanel>
             <ListView x:Name="LvAnimals">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel>
-                            <TextBlock Text="{Binding Name}"/>
-                            <TextBlock Text="{Binding Age}"/>
-                            <TextBlock Text="{Binding TypeAnimal.Name}"/>
+                            <TextBlock Text="{Binding Name, StringFormat='Кличка: {0}'}"/>
+                            <TextBlock Text="{Binding TypeAnimal.Name, StringFormat='Тип животного: {0}'}"/>
+                            <TextBlock Text="{Binding Age, StringFormat='Количество лет: {0}'}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

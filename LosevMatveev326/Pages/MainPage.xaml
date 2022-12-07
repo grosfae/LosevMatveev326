@@ -17,15 +17,24 @@
             <ColumnDefinition Width="auto"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <StackPanel Background="Bisque" Grid.ColumnSpan="2" Height="50">
-            <TextBlock Text="CIRCUS" HorizontalAlignment="Center" FontSize="30"/>
+        <StackPanel Background="Black" Grid.ColumnSpan="2" Height="50">
+            <TextBlock Text="Bozo Circus" HorizontalAlignment="Center" FontSize="30" Foreground="White"/>
         </StackPanel>
-        <StackPanel Grid.Row="1">
-            <Button x:Name="BtnAmimalManagment" Content="Управление животными" Click="BtnAmimalManagment_Click" Visibility="Collapsed"/>
-            <Button x:Name="BtnEmployeeManagment" Content="Управление сотрудниками" Click="BtnEmployeeManagment_Click" Visibility="Collapsed"/>
-            <Button x:Name="BtnSolitaire" Content="Разложить пасьянс" Click="BtnSolitaire_Click"/>
-            
+        <Grid Grid.Row="1">
+            <Grid.Background>
+                <LinearGradientBrush>
+                    <GradientStop Color="Black" Offset="0.5"/>
+                    <GradientStop Color="Orange" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <StackPanel>
+                <Button x:Name="BtnAmimalManagment" Content="Управление животными" Click="BtnAmimalManagment_Click" Visibility="Collapsed" Background="White" BorderBrush="Transparent"/>
+                <Button x:Name="BtnEmployeeManagment" Content="Управление сотрудниками" Click="BtnEmployeeManagment_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
+                <Button x:Name="BtnItemManagment" Content="Управление реквизитами" Click="BtnItemManagment_Click" Background="White" BorderBrush="Transparent" Visibility="Visible"/>
+                <Button x:Name="BtnPerformanceManagment" Content="Управление выступлениями" Click="BtnPerformanceManagment_Click" Background="White" BorderBrush="Transparent" Visibility="Visible"/>
+                <Button x:Name="BtnSolitaire" Content="Разложить пасьянс" Click="BtnSolitaire_Click" Background="White" BorderBrush="Transparent"/>
         </StackPanel>
+        </Grid>
         <Frame x:Name="MenuFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1"/>
     </Grid>
 </Page>

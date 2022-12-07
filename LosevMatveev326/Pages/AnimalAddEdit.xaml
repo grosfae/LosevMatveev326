@@ -9,7 +9,7 @@
       Title="AnimalAddEdit">
 
     <Grid>
-        <StackPanel>
+        <StackPanel Margin="5" Width="300" HorizontalAlignment="Center">
             <TextBlock Text="Кличка"/>
             <TextBox Text="{Binding Name}"/>
             <TextBlock Text="Возраст"/>
@@ -18,8 +18,8 @@
             <ComboBox x:Name="CbTypes" SelectedItem="{Binding TypeAnimal}" DisplayMemberPath="Name"/>
             <TextBlock Text="Клетка"/>
             <ComboBox x:Name="CbCages" SelectedItem="{Binding Cage}" DisplayMemberPath="Name"/>
-            <Button x:Name="BtnSave" Content="Сохранить" Click="BtnSave_Click"/>
-            <Button x:Name="BtnCancel" Content="Отмена" Click="BtnCancel_Click"/>
+            <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
+            <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click"/>
         </StackPanel>
     </Grid>
 </Page>

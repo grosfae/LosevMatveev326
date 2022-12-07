@@ -100,6 +100,9 @@
     <Compile Include="Components\Model\Employee.cs">
       <DependentUpon>CircusModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Components\Model\Group.cs">
+      <DependentUpon>CircusModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Components\Model\Item.cs">
       <DependentUpon>CircusModel.tt</DependentUpon>
     </Compile>
@@ -147,11 +150,27 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ItemAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ItemsPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\LoginPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PerformanceAddEdit.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PerformancePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -173,11 +192,23 @@
     <Compile Include="Pages\EmployeesPage.xaml.cs">
       <DependentUpon>EmployeesPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ItemAddEdit.xaml.cs">
+      <DependentUpon>ItemAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ItemsPage.xaml.cs">
+      <DependentUpon>ItemsPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PerformanceAddEdit.xaml.cs">
+      <DependentUpon>PerformanceAddEdit.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PerformancePage.xaml.cs">
+      <DependentUpon>PerformancePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\SolitairePage.xaml.cs">
       <DependentUpon>SolitairePage.xaml</DependentUpon>

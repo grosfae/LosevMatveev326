@@ -35,6 +35,11 @@ namespace LosevMatveev326.Pages
         private void BtnEdit_Click(object sender, RoutedEventArgs e)
         {
             var selectedAnimal = LvAnimals.SelectedItem as Animal ;
+            if (selectedAnimal == null)
+            {
+                MessageBox.Show("Выберите животное");
+                return;
+            }
             NavigationService.Navigate(new AnimalAddEdit(selectedAnimal));
         }
 

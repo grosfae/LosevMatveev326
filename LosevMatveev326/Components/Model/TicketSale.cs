@@ -16,9 +16,7 @@ namespace LosevMatveev326.Components.Model
     {
         public int Id { get; set; }
         public int PerformanceId { get; set; }
-        public int ClientId { get; set; }
     
-        public virtual Client Client { get; set; }
         public virtual Performance Performance { get; set; }
     }
 }

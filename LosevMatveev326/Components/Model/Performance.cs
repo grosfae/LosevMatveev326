@@ -23,7 +23,8 @@ namespace LosevMatveev326.Components.Model
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public System.DateTime DateTime { get; set; }
+        public System.DateTime Date { get; set; }
+        public System.TimeSpan Time { get; set; }
         public decimal TicketPrice { get; set; }
         public int TicketAmount { get; set; }
     
