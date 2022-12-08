@@ -77,7 +77,7 @@ namespace LosevMatveev326.Pages
             }
             else
             {
-                LvEmployees.ItemsSource = App.DB.Employee.Where(a => a.Salary.ToString().Contains(TbSearch.Text.ToLower())).ToList();
+                LvEmployees.ItemsSource = App.DB.Employee.Where(a => a.LastName.ToString().Contains(TbSearch.Text.ToLower())).ToList();
             }
         }
 
