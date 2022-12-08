@@ -96,5 +96,10 @@ namespace LosevMatveev326.Pages
         {
             MenuFrame.Navigate(new SchedulePerformancePage());
         }
+
+        private void BtnBlackJ_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFrame.Navigate(new BlackJPage());
+        }
     }
 }
