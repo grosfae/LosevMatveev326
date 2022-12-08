@@ -33,8 +33,9 @@
                 <Button x:Name="BtnItemManagment" Content="Управление реквизитами" Click="BtnItemManagment_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
                 <Button x:Name="BtnPerformanceManagment" Content="Выступления" Click="BtnPerformanceManagment_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
                 <Button x:Name="BtnTicketSale" Content="Продажа билетов" Click="BtnTicketSale_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
+                <Button x:Name="BtnSchedulePerfomance" Content="Расписание выступлений" Click="BtnSchedulePerfomance_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
                 <Button x:Name="BtnSolitaire" Content="Разложить пасьянс" Click="BtnSolitaire_Click" Background="White" BorderBrush="Transparent" Visibility="Collapsed"/>
-        </StackPanel>
+            </StackPanel>
         </Grid>
         <Frame x:Name="MenuFrame" NavigationUIVisibility="Hidden" Grid.Column="1" Grid.Row="1"/>
     </Grid>

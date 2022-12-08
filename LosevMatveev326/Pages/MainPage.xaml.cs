@@ -38,12 +38,13 @@ namespace LosevMatveev326.Pages
             if (App.LoggedEmployee.PostId == (int)CircusPosts.Trainer)
             {
                 BtnAmimalManagment.Visibility = Visibility.Visible;
+                BtnSchedulePerfomance.Visibility = Visibility.Visible;
                 MenuFrame.Navigate(new AnimalsPage());
             }
             if (App.LoggedEmployee.PostId == (int)CircusPosts.Clown)
             {
-                BtnPerformanceManagment.Visibility = Visibility.Visible;
-                MenuFrame.Navigate(new PerformancePage());
+                BtnSchedulePerfomance.Visibility = Visibility.Visible;
+                MenuFrame.Navigate(new SchedulePerformancePage());
             }
             if (App.LoggedEmployee.PostId == (int)CircusPosts.Casshier)
             {
@@ -56,6 +57,7 @@ namespace LosevMatveev326.Pages
                 BtnEmployeeManagment.Visibility = Visibility.Visible;
                 BtnItemManagment.Visibility = Visibility.Visible;
                 BtnPerformanceManagment.Visibility = Visibility.Visible;
+                BtnSchedulePerfomance.Visibility = Visibility.Visible;
                 BtnTicketSale.Visibility = Visibility.Visible;
             }
         }
@@ -90,5 +92,9 @@ namespace LosevMatveev326.Pages
             MenuFrame.Navigate(new TicketSalePage());
         }
 
+        private void BtnSchedulePerfomance_Click(object sender, RoutedEventArgs e)
+        {
+            MenuFrame.Navigate(new SchedulePerformancePage());
+        }
     }
 }

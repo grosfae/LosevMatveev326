@@ -1,4 +1,4 @@
-﻿<Page x:Class="LosevMatveev326.Pages.TicketSaleAddEdit"
+﻿<Page x:Class="LosevMatveev326.Pages.SchedulePerformanceAddEdit"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:LosevMatveev326.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="TicketSaleAddEdit">
+      Title="SchedulePerformanceAddEdit">
 
     <Grid>
         <StackPanel Width="300" Margin="5">
@@ -16,8 +16,8 @@
             <TextBlock Text="{Binding Performance.Date, StringFormat='dd.MM.yyyy'}" Height="20"/>
             <TextBlock Text="Время выступления"/>
             <TextBlock Text="{Binding Performance.Time}" Height="20"/>
-            <TextBlock Text="Цена билета"/>
-            <TextBlock Text="{Binding Performance.TicketPrice, StringFormat=' {0} руб'}" Height="20"/>
+            <TextBlock Text="Выступающая группа"/>
+            <ComboBox x:Name="CbGroup" SelectedItem="{Binding Group}" DisplayMemberPath="Name"/>
             <StackPanel Orientation="Horizontal">
                 <Button x:Name="BtnSave" Style="{StaticResource Angle}" Width="150" Background="Black" Foreground="White" Content="Сохранить" Click="BtnSave_Click" Margin="10"/>
                 <Button x:Name="BtnCancel" Style="{StaticResource Angle}" Width="100" Background="Black" Foreground="White" Content="Отмена" Click="BtnCancel_Click" Height="25"/>
